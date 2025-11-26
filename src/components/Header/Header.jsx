@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import { FaShopify } from "react-icons/fa";
 
 import { Link, NavLink } from "react-router-dom";
+import { CartContext } from "../Context/CartContext";
 
 const Header = () => {
+  const {cart} = useContext(CartContext)
   const links = (
     <>
       <li>
@@ -59,7 +62,10 @@ const Header = () => {
         </div>
         <div className="navbar-end">
           <a className="">
-            <FaShopify className="w-8 h-8" />
+            {/* <FaShopify className="w-8 h-8" /> */}
+            {
+              cart.length
+            }
           </a>
         </div>
       </div>

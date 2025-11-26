@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import { CartContext } from "../Context/CartContext";
 
 const View = () => {
+  const { cart, setCart } = useContext(CartContext);
+
   const data = useLoaderData();
   const { thumbnail, price, rating, title, description, images } = data;
   const navigate = useNavigate();
@@ -17,7 +20,6 @@ const View = () => {
     const newCount = count - 1;
     setCount(newCount);
   };
-
 
   return (
     <div>
@@ -100,7 +102,10 @@ const View = () => {
             >
               Return To Shop
             </button>
-            <button className="border px-6 py-3 rounded-md hover:bg-black hover:text-white transition cursor-pointer">
+            <button
+              onClick={() => setCart(...cart, data)}
+              className="border px-6 py-3 rounded-md hover:bg-black hover:text-white transition cursor-pointer"
+            >
               Add To Cart
             </button>
           </div>
