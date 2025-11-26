@@ -22,8 +22,8 @@ const Header = () => {
   );
 
   return (
-    <div>
-      <div className="navbar bg-base-100 shadow-sm p-6">
+    <div className="shadow-sm sticky top-0 bg-white z-10">
+      <div className="navbar bg-base-100 max-w-[1440px] mx-auto p-6">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -61,12 +61,10 @@ const Header = () => {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-          <a className="">
-            {/* <FaShopify className="w-8 h-8" /> */}
-            {
-              cart.length
-            }
-          </a>
+          <Link to={'/cart'} className="">
+            <FaShopify className="w-8 h-8 absolute" />
+            { cart.length>0 &&          <div className="relative bg-red-500 -top-2 -left-2 rounded-full w-5 h-5 flex items-center justify-center text-white text-xs" >{ cart.length}</div>}
+          </Link>
         </div>
       </div>
     </div>

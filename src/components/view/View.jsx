@@ -103,7 +103,7 @@ const View = () => {
               Return To Shop
             </button>
             <button
-              onClick={() => setCart(...cart, data)}
+              onClick={() => setCart([...cart, data])}
               className="border px-6 py-3 rounded-md hover:bg-black hover:text-white transition cursor-pointer"
             >
               Add To Cart

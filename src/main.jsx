@@ -6,6 +6,7 @@ import Root from "./Root/Root.jsx";
 import Home from "./components/Home/Home.jsx";
 import Products from "./components/Products/Products.jsx";
 import View from "./components/view/View.jsx";
+import Cart from "./components/Cart/Cart.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "product",
         element: <Products></Products>,
+      },
+      {
+        path: "cart",
+        element: <Cart></Cart>,
       },
       {
         path: "view/:id",
